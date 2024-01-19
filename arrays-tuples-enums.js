@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var helpers_1 = require("./helpers");
-var types_1 = require("./types");
+const helpers_1 = require("./helpers");
+const types_1 = require("./types");
 // Array to store the list of tasks
-var tasks = [];
+let tasks = [];
 // Add tasks
 (0, helpers_1.addTask)(1, "Complete TypeScript Tutorial", types_1.TaskStatus.InProgress, tasks);
 (0, helpers_1.addTask)(2, "Write Code Examples", types_1.TaskStatus.ToDo, tasks);
@@ -12,7 +12,7 @@ var tasks = [];
 console.log("Before Update:");
 (0, helpers_1.displayTasks)(tasks);
 // Update the status of the second task
-tasks[1][2] = types_1.TaskStatus.Done;
+(0, helpers_1.updateTaskStatus)(2, types_1.TaskStatus.Done, tasks);
 // Display tasks after update
 console.log("\nAfter Update:");
 (0, helpers_1.displayTasks)(tasks);

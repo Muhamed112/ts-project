@@ -20,6 +20,18 @@ export function removeTask(id: number, tasks: Task[]): void {
   }
 }
 
+export function updateTaskStatus(
+  id: number,
+  status: TaskStatus,
+  tasks: Task[]
+): void {
+  for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i][0] === id) {
+      tasks[i][2] = status;
+    }
+  }
+}
+
 // Function to display all tasks
 export function displayTasks(tasks: Task[]): void {
   console.log("Tasks:");

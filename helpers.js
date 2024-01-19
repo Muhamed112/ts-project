@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.displayTasks = exports.removeTask = exports.addTask = void 0;
-var types_1 = require("./types");
+exports.displayTasks = exports.updateTaskStatus = exports.removeTask = exports.addTask = void 0;
+const types_1 = require("./types");
 // Function to add a new task to the array
 function addTask(id, title, status, tasks) {
     tasks.push([id, title, status]);
@@ -9,7 +9,7 @@ function addTask(id, title, status, tasks) {
 exports.addTask = addTask;
 // Function to remove a task from the rray
 function removeTask(id, tasks) {
-    for (var i = 0; i < tasks.length; i++) {
+    for (let i = 0; i < tasks.length; i++) {
         if (tasks[i][0] === id) {
             tasks.splice(i, 1);
             break; // exit the loop once the task is found and removed
@@ -17,11 +17,19 @@ function removeTask(id, tasks) {
     }
 }
 exports.removeTask = removeTask;
+function updateTaskStatus(id, status, tasks) {
+    for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i][0] === id) {
+            tasks[i][2] = status;
+        }
+    }
+}
+exports.updateTaskStatus = updateTaskStatus;
 // Function to display all tasks
 function displayTasks(tasks) {
     console.log("Tasks:");
-    tasks.forEach(function (task) {
-        console.log("ID: ".concat(task[0], ", Title: ").concat(task[1], ", Status: ").concat(types_1.TaskStatus[task[2]]));
+    tasks.forEach((task) => {
+        console.log(`ID: ${task[0]}, Title: ${task[1]}, Status: ${types_1.TaskStatus[task[2]]}`);
     });
 }
 exports.displayTasks = displayTasks;
