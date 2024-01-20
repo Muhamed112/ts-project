@@ -25,10 +25,8 @@ export function updateTaskStatus(
   status: TaskStatus,
   tasks: Task[]
 ): void {
-  //Add logic for update
   for (let i = 0; i < tasks.length; i++) {
     if (tasks[i][0] === id) {
-      //Conflict test
       tasks[i][2] = status;
     }
   }
