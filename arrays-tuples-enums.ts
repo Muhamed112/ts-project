@@ -14,7 +14,7 @@ console.log("Before Update:");
 displayTasks(tasks);
 
 // Update the status of the second task
-updateTaskStatus(2, TaskStatus.Done, tasks);
+updateTaskStatus(2, TaskStatus.Done, tasks)
 
 // Display tasks after update
 console.log("\nAfter Update:");
