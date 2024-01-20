@@ -21,6 +21,7 @@ function updateTaskStatus(id, status, tasks) {
     for (let i = 0; i < tasks.length; i++) {
         if (tasks[i][0] === id) {
             tasks[i][2] = status;
+            tasks[i][1] = 'Test';
         }
     }
 }
