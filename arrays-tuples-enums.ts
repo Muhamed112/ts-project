@@ -1,4 +1,4 @@
-import { addTask, displayTasks, removeTask } from "./helpers";
+import { addTask, displayTasks, removeTask, updateTaskStatus } from "./helpers";
 import { Task, TaskStatus } from "./types";
 
 // Array to store the list of tasks
@@ -14,7 +14,7 @@ console.log("Before Update:");
 displayTasks(tasks);
 
 // Update the status of the second task
-tasks[1][2] = TaskStatus.Done;
+updateTaskStatus(2, TaskStatus.Done, tasks);
 
 // Display tasks after update
 console.log("\nAfter Update:");
